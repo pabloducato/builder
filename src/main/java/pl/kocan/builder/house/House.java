@@ -10,7 +10,7 @@ public class House {
     private final String doors;
     private final String garage;
 
-    private House(HouseBuilder houseBuilder) {
+    House(HouseBuilder houseBuilder) {
         this.walls = houseBuilder.walls;
         this.floors = houseBuilder.floors;
         this.rooms = houseBuilder.rooms;

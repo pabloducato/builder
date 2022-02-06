@@ -1,4 +1,4 @@
-import pl.kocan.builder.house.House;
+import pl.kocan.builder.house.*;
 
 public class Main {
 
@@ -11,6 +11,24 @@ public class Main {
                 .buildRooms("rooms")
                 .build();
         System.out.println(house);
+
+        SmallHouseBuilder smallHouseBuilder = new SmallHouseBuilder();
+        BigHouseBuilder bigHouseBuilder = new BigHouseBuilder();
+
+        HouseDirector smallHouseDirector = new HouseDirector(smallHouseBuilder);
+
+        smallHouseDirector.buildHouse();
+
+        HouseDirector bigHouseDirector = new HouseDirector(bigHouseBuilder);
+
+        bigHouseDirector.buildHouse();
+
+        House2 smallHouse = smallHouseBuilder.getHouse();
+        House2 bigHouse = bigHouseDirector.getHouse();
+
+        System.out.println(smallHouse);
+        System.out.println(bigHouse);
+
     }
 
 }
